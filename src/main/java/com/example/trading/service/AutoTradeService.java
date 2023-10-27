@@ -30,7 +30,7 @@ public class AutoTradeService implements TradingAlgorithm {
     }
 
     @Override
-    public Trade buildTrades(Price price) {
+    public synchronized Trade buildTrades(Price price) {
         long startTime = System.currentTimeMillis();
         String currentProduct = price.getProductName();
         BigDecimal currentPrice = price.getPrice();
